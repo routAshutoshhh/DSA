@@ -1,0 +1,8 @@
+what is a subsequence ?
+so subsequence is a contigous or non contigous sequence which follows a the order 
+eg:so lets say this is a na arrray 
+[3,1,2] : possible subsequence ={3,1,2,{3,1},{3,1,2},{1,2},{3,2}} but it can never be {2,3} as it does not follow the order here
+
+subsequnce could be find using 
+1.Power set // algo for printing subsequence
+2.recursion 
