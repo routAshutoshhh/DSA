@@ -15,10 +15,11 @@ class Node{
         this->data = data;
         this->next = NULL;
     }
+    
 
     //destructor
     ~Node(){
-        int value = this->data;// sotring the data in the value container so to print the node rthat ios deleted 
+        int value = this->data;// storing the data in the value container so to print the node rthat ios deleted 
         if(this->next!=NULL){
             delete next;
             this->next = NULL;
