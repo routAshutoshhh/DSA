@@ -32,7 +32,6 @@ int main(){
         cin >>qureyNO;
         cout<<"frequency of the " <<qureyNO <<"is"<<" "<<hashArray[qureyNO]<<endl;
 
-
     } 
 
 return 0;

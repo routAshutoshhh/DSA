@@ -69,19 +69,20 @@ void BFS(Node* root) {
 
 //function to delete a particular node from the bst
 Node* deletefromBST(Node* root  int val){
+    //base case it means there is no root
     if(root == NULL){
         return root;
     }
     //data mil gya khojna band karo ab aage ka hisab karo 
     if(root->data == val){
+        //case 0
         //if teh particular node has no child(0 child)
             if (root -> left == NULL && root->right == NULL){
                 delete root;
                 return NULL;
             }
 
-
-
+        //case 1
         //if the particular node has 1 child that has to be deleted
             //it has particularly 2 cases 
             //if the node that is to be deleted is the left child 
@@ -98,10 +99,11 @@ Node* deletefromBST(Node* root  int val){
                 return temp;
             }
 
-
+        //case2
         //if the particular node has 2 child that has to be deleted
         if(root->left!=NULL && root->right !=NULL){
         int mini = minVal(root->right)->data;
+        //now since we have got the samllest data from the right subtreee now we going to copy it to the root  value and delete that root valuue and then we going to dekete that min value from the bst
         root->data = mini;
         root->right = deletefromBST(root->right , mini);
         return root;
@@ -152,12 +154,17 @@ void takeInput(Node* &root) {
 
 // Main function
 int main() {
-    //making a node callled root of Node type whose value is initiallly NULL
+    int val;
+    //making a node called root of Node type whose value is initially NULL
     Node* root = NULL;
     takeInput(root);
-    // cout << "Printing the BST:" << endl;
-    // BFS(root);
+    cout << "Printing the BST:" << endl;
+    BFS(root);
     cout<<"the min value after consturcting the BST "<<minVal(root)<<endl;
     cout<<"the max value after consturcting the BST "<<maxVal(root)<<endl;
+    cout<<"ENter the value you want to delete from BST"<<endl;
+    cin>>val;
+    deletefromBST(root , val);
+    BFS(root);
     return 0;
 }
